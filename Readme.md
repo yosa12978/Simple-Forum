@@ -1,7 +1,7 @@
 # Simple Forum
 this is a simple forum written in C# and ASP.NET Core
 <hr>
-## API Docs
+# API Docs
 the API is not completed yet
 available API urls:
 
