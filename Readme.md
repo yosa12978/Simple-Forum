@@ -5,12 +5,12 @@ this is a simple forum written in C# and ASP.NET Core
 the API is not completed yet
 available API urls:
 
-+---+----------------+-------------+
-| # |      URL       |   Meaning   |
-+---+----------------+-------------+
-| 1 |    /           |Get All Posts|
-+---+----------------+-------------+
-| 2 |    /{id}       | Post Detail |
-+---+----------------+-------------+
-| 3 |   /categories  | Categories  |
++---+----------------+-------------+<br>
+| # |      URL       |   Meaning   |<br>
++---+----------------+-------------+<br>
+| 1 |    /           |Get All Posts|<br>
++---+----------------+-------------+<br>
+| 2 |    /{id}       | Post Detail |<br>
++---+----------------+-------------+<br>
+| 3 |   /categories  | Categories  |<br>
 +---+----------------+-------------+ 
