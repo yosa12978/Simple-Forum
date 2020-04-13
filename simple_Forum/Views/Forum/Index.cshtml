@@ -1,0 +1,20 @@
+﻿@model IEnumerable<simple_Forum.Models.Post>
+@{
+    ViewData["Title"] = "Posts";
+}
+<h3>Posts</h3>
+<form class="form-inline" method="get">
+    <input class="form-control mr-2" name="search" placeholder="Search">
+    <button class="btn btn-outline-info" type="submit">Search</button>
+</form>
+<br>
+<hr>
+@foreach (var i in Model)
+{
+    <div>
+        <div class="alert alert-secondary" style="border-radius: 0px; border-color:white;">
+            <a href="/Forum/Detail/@i.id">@i.title</a><br>
+            <small>@i.createDate - <a href="/Account/?name=@i.Author.username">@i.Author.username</a></small>
+        </div>
+    </div>
+}

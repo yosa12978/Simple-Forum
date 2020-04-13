@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = User.Identity.Name;
+}
+<div style="border-radius: 0px; color:white; background-color:#575757;" class="alert alert-dark text-white">
+    <img src="@ViewBag.UserData.icon" style="width:100px; height:100px;" />
+    <h1>Account: @ViewBag.UserData.username</h1>
+    @if(User.Identity.Name == ViewBag.UserData.username)
+    {<br>
+        <a href="/Account/Edit/" class="btn btn-outline-warning">Edit Account</a>
+    }
+</div>
+<hr>
+<form class="form-inline" method="get">
+    <input class="form-control mr-2" name="search" placeholder="Search">
+    <button class="btn btn-outline-info" type="submit">Search</button>
+</form>
+<br>
+<hr>
+<div>
+    @foreach (var i in ViewBag.Posts)
+    {
+        <div class="alert alert-secondary" style="border-radius: 0px; border-color:white;">
+            <a href="/Forum/Detail/@i.id">@i.title</a><br>
+            <small>@i.createDate - <a href="/Account/?name=@i.Author.username">@i.Author.username</a></small>
+            @if (User.Identity.Name == ViewBag.UserData.username)
+            {
+                <a href="/Forum/Edit/@i.id" class="btn btn-outline-warning">Edit</a>
+                <a href="/Forum/Delete/@i.id" class="btn btn-outline-danger">Delete</a>
+            }
+        </div>
+    }
+</div>

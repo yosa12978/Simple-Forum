@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<hr>
+@if (ViewBag.Error != null)
+{
+    <p style="color:red;">@ViewBag.Error</p>
+}
+@if (ViewBag.Success != null)
+{
+    <p style="color:lawngreen;">@ViewBag.Success</p>
+}
+<form method="post">
+    <select name="category" class="form-control" style="width:100%" required>
+        @foreach (var i in ViewBag.Categories) 
+        {
+        <option value="@i.id">@i.title</option>
+        }
+    </select><br>
+    <input style="width:100%" name="title" class="form-control" placeholder="Post title" value="@ViewBag.curr.title" required /><br>
+    <textarea style="width:100%" name="text" class="form-control" placeholder="Post text">@ViewBag.curr.text</textarea><br>
+    <button type="submit" class="btn btn-outline-success">Save</button>
+</form>

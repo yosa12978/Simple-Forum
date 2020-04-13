@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Forum - @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand text-dark" style="color:black;" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/1.PNG" style="width: 200px; height:auto;" /></a>
+            <a class="ml-2 btn btn-outline-secondary" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <a class="ml-2 btn btn-outline-secondary" asp-area="" asp-controller="Forum" asp-action="Index">Posts</a>
+            <a class="ml-2 btn btn-outline-secondary" asp-area="" asp-controller="Home" asp-action="Rules">Rules</a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a class="ml-2 btn btn-outline-info" asp-area="" asp-controller="Account" asp-action="Index">@User.Identity.Name</a>
+                <a class="ml-2 btn btn-outline-danger" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+            }
+            else
+            {
+                <a class="ml-2 btn btn-outline-primary" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                <a class="ml-2 btn btn-outline-primary" asp-area="" asp-controller="Account" asp-action="Signup">Signup</a>
+            }
+
+        </nav>
+        <hr />
+    </header>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - Simple Forum
+        </div>
+    </footer>
+</body>
+</html>

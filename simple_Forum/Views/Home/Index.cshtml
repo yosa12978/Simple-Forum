@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div>
+    <h3>Categories</h3>
+    @foreach (var i in ViewBag.Categories)
+    {
+        <span class="ml-3"><a href="/Forum/Category/@i.id" class="btn btn-outline-info mt-3">@i.title</a></span>
+    } 
+</div>
+<hr><br>
+<div>
+    @foreach (var i in ViewBag.Posts)
+    {
+        <div class="alert alert-secondary" style="border-radius: 0px; border-color:white;">
+            <a href="/Forum/Detail/@i.id">@i.title</a><br>
+            <small>@i.createDate - <a href="/Account/?name=@i.Author.username">@i.Author.username</a></small>
+        </div>
+    }
+</div>
