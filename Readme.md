@@ -1,8 +1,7 @@
 # Simple Forum
 this is a simple forum written in C# and ASP.NET Core
-<hr>
-# API Docs(Not Completed)
-<br>
+
+## API Docs(Not Completed)
 
 ```/```           
   Get All Posts
