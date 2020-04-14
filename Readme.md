@@ -4,11 +4,11 @@ this is a simple forum written in C# and ASP.NET Core
 # API Docs(Not Completed)
 <br>
 
-+   /           
+```/```           
   Get All Posts
 
-+   /{id}        
+```/{id}```        
   Post Detail
   
-+   /categories   
+```/categories```   
   Categories  
